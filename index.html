@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+
+<title>TV PLUS</title>
+
+<link rel="stylesheet" href="css/index.css">
+
+</head>
+<body>
+
+
+<header class="header">
+
+    <div class="logo">
+        TV PLUS
+    </div>
+
+    <nav class="menu">
+
+        <a href="#">Início</a>
+
+        <a href="#">Canais</a>
+
+        <a href="#">Filmes</a>
+
+        <a href="#">Séries</a>
+
+    </nav>
+
+    <div class="perfil">
+
+        <div class="avatar">
+            👤
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- Banner discreto -->
+<div id="vpn-banner">
+    Para melhor experiência, utilize uma VPN.
+</div>
+
+
+
+<main>
+
+    <h2>Canais Premiere</h2>
+
+
+    <div class="carrossel-container">
+
+
+        <!-- botão esquerda -->
+        <button class="seta esquerda" onclick="rolar(-1)">
+            ❮
+        </button>
+
+
+        <!-- carrossel -->
+        <div id="carrossel"></div>
+
+
+        <!-- botão direita -->
+        <button class="seta direita" onclick="rolar(1)">
+            ❯
+        </button>
+
+
+    </div>
+
+
+</main>
+
+
+
+<!-- Popup VPN -->
+<div id="vpn-popup" class="hidden">
+
+    <div class="popup-content">
+
+        <h2>Melhor experiência com VPN</h2>
+
+        <p>
+        Recomendamos o uso de uma VPN para melhor estabilidade e funcionamento.
+        </p>
+
+        <button onclick="fecharPopup()">
+            Entendi
+        </button>
+
+    </div>
+
+</div>
+
+
+
+<script src="js/index.js"></script>
+
+
+</body>
+</html>

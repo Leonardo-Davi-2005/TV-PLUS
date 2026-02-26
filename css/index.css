@@ -1,0 +1,420 @@
+body{
+    background: #141414;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+
+.header{
+
+    position: fixed;
+
+    top: 0;
+
+    width: 100%;
+
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 40px;
+
+    background: rgba(0,0,0,0.7);
+
+    backdrop-filter: blur(10px);
+
+    z-index: 1000;
+
+}
+
+
+/* LOGO */
+
+.logo{
+
+    font-size: 26px;
+
+    font-weight: bold;
+
+    color: #e50914;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+}
+
+
+/* MENU */
+
+.menu{
+
+    display: flex;
+
+    gap: 30px;
+
+}
+
+
+.menu a{
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 16px;
+
+    opacity: 0.8;
+
+    transition: 0.2s;
+
+}
+
+
+.menu a:hover{
+
+    opacity: 1;
+
+}
+
+
+/* PERFIL */
+
+.perfil{
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+.avatar{
+
+    width: 35px;
+
+    height: 35px;
+
+    background: #333;
+
+    border-radius: 6px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 18px;
+
+    cursor: pointer;
+
+}
+
+/* MAIN */
+main{
+    padding-top: 100px;
+}
+
+h2{
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+
+/* CARROSSEL */
+#carrossel{
+
+    display: flex;
+
+    gap: 20px;
+
+    overflow-x: auto;
+    overflow-y: visible;
+
+    padding: 30px 40px;
+
+    scroll-behavior: smooth;
+
+}
+
+/* remover scrollbar */
+#carrossel::-webkit-scrollbar{
+    display: none;
+}
+
+
+/* CARD */
+.card{
+
+    min-width: 220px;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+
+    position: relative;
+
+    z-index: 1;
+
+}
+
+
+/* HOVER estilo Netflix */
+.card:hover{
+
+    transform: scale(1.15);
+
+    z-index: 999;
+
+}
+
+
+/* CONTAINER IMAGEM */
+.card-img{
+
+    position: relative;
+
+}
+
+
+/* IMAGEM */
+.card img{
+
+    width: 100%;
+
+    border-radius: 14px;
+
+    transition: box-shadow 0.3s ease;
+
+}
+
+
+/* SOMBRA NO HOVER */
+.card:hover img{
+
+    box-shadow: 0 25px 50px rgba(0,0,0,0.9);
+
+}
+
+
+/* OVERLAY ASSISTIR */
+.overlay{
+
+    position: absolute;
+
+    bottom: 0;
+
+    width: 100%;
+
+    padding: 12px;
+
+    background: linear-gradient(transparent, rgba(0,0,0,0.95));
+
+    text-align: center;
+
+    opacity: 0;
+
+    transition: opacity 0.3s ease;
+
+    border-radius: 0 0 14px 14px;
+
+    font-weight: bold;
+
+}
+
+
+.card:hover .overlay{
+
+    opacity: 1;
+
+}
+
+
+/* TITULO */
+.titulo{
+
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    text-align: center;
+
+    opacity: 0.95;
+
+}
+
+.carrossel-container{
+
+    position: relative;
+
+    display: flex;
+
+    align-items: center;
+
+}
+
+
+/* SETAS */
+
+.seta{
+
+    position: absolute;
+
+    z-index: 1000;
+
+    background: rgba(0,0,0,0.6);
+
+    border: none;
+
+    color: white;
+
+    font-size: 30px;
+
+    width: 50px;
+
+    height: 80px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+
+}
+
+.seta:hover{
+
+    background: rgba(0,0,0,0.9);
+
+    transform: scale(1.1);
+
+}
+
+.esquerda{
+
+    left: 0;
+
+}
+
+.direita{
+
+    right: 0;
+
+}
+
+
+
+/* ========================= */
+/* VPN BANNER */
+/* ========================= */
+
+#vpn-banner{
+
+    position: fixed;
+
+    bottom: 10px;
+
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    background: rgba(0,0,0,0.7);
+
+    padding: 8px 16px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    z-index: 999;
+
+}
+
+
+/* ========================= */
+/* VPN POPUP */
+/* ========================= */
+
+#vpn-popup{
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.85);
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    z-index: 1000;
+
+}
+
+
+/* esconder */
+.hidden{
+    display: none !important;
+}
+
+
+/* caixa popup */
+.popup-content{
+
+    background: #111;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    max-width: 400px;
+
+    box-shadow: 0 0 30px rgba(0,0,0,0.8);
+
+}
+
+
+/* botão popup */
+.popup-content button{
+
+    margin-top: 15px;
+
+    padding: 10px 20px;
+
+    border: none;
+
+    background: #e50914;
+
+    color: white;
+
+    cursor: pointer;
+
+    border-radius: 6px;
+
+    font-weight: bold;
+
+    transition: 0.2s;
+
+}
+
+
+.popup-content button:hover{
+
+    background: #ff1e28;
+
+}
