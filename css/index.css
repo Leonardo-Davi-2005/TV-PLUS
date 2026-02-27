@@ -418,3 +418,123 @@ h2{
     background: #ff1e28;
 
 }
+
+/* ========================= */
+/* RESPONSIVO CELULAR */
+/* ========================= */
+
+@media (max-width: 768px){
+
+    /* HEADER */
+    .header{
+
+        height: 60px;
+
+        padding: 0 15px;
+
+    }
+
+    .logo{
+
+        font-size: 20px;
+
+    }
+
+    .menu{
+
+        display: none; /* esconde menu no celular */
+
+    }
+
+    .avatar{
+
+        width: 30px;
+        height: 30px;
+        font-size: 16px;
+
+    }
+
+
+    /* MAIN */
+
+    main{
+
+        padding-top: 80px;
+
+    }
+
+    h2{
+
+        margin-left: 15px;
+
+        font-size: 18px;
+
+    }
+
+
+    /* CARROSSEL */
+
+    #carrossel{
+
+        padding-left: 15px;
+
+        gap: 12px;
+
+    }
+
+
+    /* CARD */
+
+    .card{
+
+        min-width: 140px;
+
+    }
+
+    .card:hover{
+
+        transform: scale(1.08); /* menor no celular */
+
+    }
+
+
+    /* TEXTO */
+
+    .titulo{
+
+        font-size: 14px;
+
+    }
+
+
+    /* SETAS */
+
+    .seta{
+
+        display: none; /* remove setas no celular */
+
+    }
+
+
+    /* POPUP */
+
+    .popup-content{
+
+        width: 90%;
+
+        padding: 20px;
+
+    }
+
+
+    /* BANNER */
+
+    #vpn-banner{
+
+        font-size: 12px;
+
+        padding: 6px 12px;
+
+    }
+
+}
