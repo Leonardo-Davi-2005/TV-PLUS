@@ -1,10 +1,23 @@
+/* ========================= */
+/* BASE */
+/* ========================= */
+
 body{
+
     background: #141414;
+
     margin: 0;
+
     font-family: Arial, sans-serif;
+
     color: white;
+
 }
 
+
+/* ========================= */
+/* HEADER */
+/* ========================= */
 
 .header{
 
@@ -33,8 +46,6 @@ body{
 }
 
 
-/* LOGO */
-
 .logo{
 
     font-size: 26px;
@@ -49,8 +60,6 @@ body{
 
 }
 
-
-/* MENU */
 
 .menu{
 
@@ -83,8 +92,6 @@ body{
 }
 
 
-/* PERFIL */
-
 .perfil{
 
     display: flex;
@@ -116,66 +123,98 @@ body{
 
 }
 
+
+/* ========================= */
 /* MAIN */
+/* ========================= */
+
 main{
+
     padding-top: 100px;
+
 }
+
 
 h2{
+
     margin-left: 40px;
+
     margin-bottom: 10px;
+
+    font-size: 22px;
+
 }
 
 
+/* ========================= */
 /* CARROSSEL */
-#carrossel{
+/* ========================= */
 
-    display: flex;
-
-    gap: 20px;
-
-    overflow-x: auto;
-    overflow-y: visible;
-
-    padding: 30px 40px;
-
-    scroll-behavior: smooth;
-
-}
-
-/* remover scrollbar */
-#carrossel::-webkit-scrollbar{
-    display: none;
-}
-
-
-/* CARD */
-.card{
-
-    min-width: 220px;
-
-    cursor: pointer;
-
-    transition: transform 0.3s ease;
+.carrossel-container{
 
     position: relative;
 
-    z-index: 1;
+    display: flex;
+
+    align-items: center;
 
 }
 
 
-/* HOVER estilo Netflix */
+.carrossel{
+
+    display: flex;
+
+    gap: 16px;
+
+    overflow-x: auto;
+
+    overflow-y: hidden;
+
+    scroll-behavior: smooth;
+
+    padding: 20px 40px;
+
+}
+
+
+/* remove scrollbar */
+
+.carrossel::-webkit-scrollbar{
+
+    display: none;
+
+}
+
+
+/* ========================= */
+/* CARD */
+/* ========================= */
+
+.card{
+
+    width: 180px;
+
+    flex-shrink: 0;
+
+    cursor: pointer;
+
+    transition: transform 0.25s ease;
+
+}
+
+
 .card:hover{
 
-    transform: scale(1.15);
+    transform: scale(1.12);
 
-    z-index: 999;
+    z-index: 10;
 
 }
 
 
-/* CONTAINER IMAGEM */
+/* IMAGEM */
+
 .card-img{
 
     position: relative;
@@ -183,27 +222,30 @@ h2{
 }
 
 
-/* IMAGEM */
 .card img{
 
     width: 100%;
 
-    border-radius: 14px;
+    aspect-ratio: 16 / 9;
 
-    transition: box-shadow 0.3s ease;
+    object-fit: cover;
+
+    border-radius: 12px;
+
+    transition: box-shadow 0.25s ease;
 
 }
 
 
-/* SOMBRA NO HOVER */
 .card:hover img{
 
-    box-shadow: 0 25px 50px rgba(0,0,0,0.9);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.9);
 
 }
 
 
-/* OVERLAY ASSISTIR */
+/* OVERLAY */
+
 .overlay{
 
     position: absolute;
@@ -212,7 +254,7 @@ h2{
 
     width: 100%;
 
-    padding: 12px;
+    padding: 10px;
 
     background: linear-gradient(transparent, rgba(0,0,0,0.95));
 
@@ -220,9 +262,9 @@ h2{
 
     opacity: 0;
 
-    transition: opacity 0.3s ease;
+    transition: opacity 0.25s ease;
 
-    border-radius: 0 0 14px 14px;
+    border-radius: 0 0 12px 12px;
 
     font-weight: bold;
 
@@ -237,58 +279,48 @@ h2{
 
 
 /* TITULO */
+
 .titulo{
 
-    display: block;
+    margin-top: 6px;
 
-    margin-top: 8px;
-
-    font-size: 16px;
+    font-size: 14px;
 
     font-weight: bold;
 
     text-align: center;
 
-    opacity: 0.95;
-
-}
-
-.carrossel-container{
-
-    position: relative;
-
-    display: flex;
-
-    align-items: center;
-
 }
 
 
+/* ========================= */
 /* SETAS */
+/* ========================= */
 
 .seta{
 
     position: absolute;
 
-    z-index: 1000;
+    z-index: 100;
 
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.5);
 
     border: none;
 
     color: white;
 
-    font-size: 30px;
+    font-size: 28px;
 
-    width: 50px;
+    width: 45px;
 
-    height: 80px;
+    height: 70px;
 
     cursor: pointer;
 
     transition: 0.2s;
 
 }
+
 
 .seta:hover{
 
@@ -298,18 +330,19 @@ h2{
 
 }
 
+
 .esquerda{
 
     left: 0;
 
 }
 
+
 .direita{
 
     right: 0;
 
 }
-
 
 
 /* ========================= */
@@ -340,7 +373,7 @@ h2{
 
 
 /* ========================= */
-/* VPN POPUP */
+/* POPUP */
 /* ========================= */
 
 #vpn-popup{
@@ -348,9 +381,11 @@ h2{
     position: fixed;
 
     top: 0;
+
     left: 0;
 
     width: 100%;
+
     height: 100%;
 
     background: rgba(0,0,0,0.85);
@@ -358,6 +393,7 @@ h2{
     display: flex;
 
     justify-content: center;
+
     align-items: center;
 
     z-index: 1000;
@@ -365,13 +401,13 @@ h2{
 }
 
 
-/* esconder */
 .hidden{
+
     display: none !important;
+
 }
 
 
-/* caixa popup */
 .popup-content{
 
     background: #111;
@@ -384,12 +420,9 @@ h2{
 
     max-width: 400px;
 
-    box-shadow: 0 0 30px rgba(0,0,0,0.8);
-
 }
 
 
-/* botão popup */
 .popup-content button{
 
     margin-top: 15px;
@@ -408,8 +441,6 @@ h2{
 
     font-weight: bold;
 
-    transition: 0.2s;
-
 }
 
 
@@ -419,13 +450,28 @@ h2{
 
 }
 
+.separador{
+
+    height: 1px;
+
+    margin: 40px 40px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.3),
+        transparent
+    );
+
+}
+
+
 /* ========================= */
 /* RESPONSIVO CELULAR */
 /* ========================= */
 
 @media (max-width: 768px){
 
-    /* HEADER */
     .header{
 
         height: 60px;
@@ -442,20 +488,17 @@ h2{
 
     .menu{
 
-        display: none; /* esconde menu no celular */
+        display: none;
 
     }
 
     .avatar{
 
         width: 30px;
+
         height: 30px;
-        font-size: 16px;
 
     }
-
-
-    /* MAIN */
 
     main{
 
@@ -471,10 +514,7 @@ h2{
 
     }
 
-
-    /* CARROSSEL */
-
-    #carrossel{
+    .carrossel{
 
         padding-left: 15px;
 
@@ -482,58 +522,43 @@ h2{
 
     }
 
-
-    /* CARD */
-
     .card{
 
-        min-width: 140px;
+        width: 130px;
 
     }
-
-    .card:hover{
-
-        transform: scale(1.08); /* menor no celular */
-
-    }
-
-
-    /* TEXTO */
 
     .titulo{
 
-        font-size: 14px;
+        font-size: 12px;
 
     }
-
-
-    /* SETAS */
 
     .seta{
 
-        display: none; /* remove setas no celular */
+        display: none;
 
     }
-
-
-    /* POPUP */
-
-    .popup-content{
-
-        width: 90%;
-
-        padding: 20px;
-
-    }
-
-
-    /* BANNER */
 
     #vpn-banner{
 
         font-size: 12px;
+        text-align: center;
 
-        padding: 6px 12px;
+    }
+
+}
+
+
+/* ========================= */
+/* TELAS GRANDES */
+/* ========================= */
+
+@media (min-width: 1400px){
+
+    .card{
+
+        width: 200px;
 
     }
 

@@ -1,4 +1,6 @@
-const carrossel = document.getElementById("carrossel");
+// =============================
+// LINKS DOS CANAIS
+// =============================
 
 const linksPremiere = [
 
@@ -13,128 +15,116 @@ const linksPremiere = [
 
 ];
 
-const total = linksPremiere.length;
+const linksParamount = [
+
+    "https://www2.embedtv.best/paramountplus",
+    "https://www2.embedtv.best/paramountplus2"
+
+];
 
 
-// CRIAR CARDS (3x para infinito perfeito)
-function criarCards(){
+// =============================
+// CRIAR CARROSSEL COMPLETO
+// =============================
 
-    for(let x = 0; x < 3; x++){
+function iniciarCarrossel(id, links, nomeCanal, imagem)
+{
 
-        linksPremiere.forEach((link, i)=>{
+    const carrossel = document.getElementById(id);
 
-            criarCard(link, i);
+    if(!carrossel) return;
 
+    let bloqueado = false;
+
+
+    // criar cards 3x (loop infinito)
+    for(let x = 0; x < 3; x++)
+    {
+        links.forEach((link, i)=>
+        {
+            const card = document.createElement("div");
+
+            card.className = "card";
+
+            card.innerHTML = `
+
+                <div class="card-img">
+
+                    <img src="${imagem}">
+
+                    <div class="overlay">
+                        ▶ Assistir
+                    </div>
+
+                </div>
+
+                <p class="titulo">${nomeCanal} ${i+1}</p>
+
+            `;
+
+            card.onclick = () =>
+            {
+                window.location.href =
+                    "player.html?video=" +
+                    encodeURIComponent(link) +
+                    "&nome=" +
+                    encodeURIComponent(nomeCanal + " " + (i+1));
+            };
+
+            carrossel.appendChild(card);
         });
-
     }
+
+
+    // posicionar no meio
+    setTimeout(()=>{
+        carrossel.scrollLeft = carrossel.scrollWidth / 3;
+    },100);
+
+
+    // loop infinito suave
+    carrossel.addEventListener("scroll", ()=>{
+
+        if(bloqueado) return;
+
+        const larguraTotal = carrossel.scrollWidth;
+        const larguraVisivel = carrossel.clientWidth;
+        const posicao = carrossel.scrollLeft;
+
+        const pontoInicio = larguraTotal / 3;
+
+        if(posicao <= 0 || posicao + larguraVisivel >= larguraTotal)
+        {
+            bloqueado = true;
+
+            carrossel.scrollLeft = pontoInicio;
+
+            setTimeout(()=> bloqueado = false, 50);
+        }
+
+    });
+
+
+    // scroll com mouse
+    carrossel.addEventListener("wheel", (e)=>{
+
+        e.preventDefault();
+
+        carrossel.scrollLeft += e.deltaY;
+
+    });
 
 }
 
 
-// CRIAR CARD INDIVIDUAL
-function criarCard(link, i){
+// =============================
+// BOTÕES LATERAIS
+// =============================
 
-    const card = document.createElement("div");
+function rolar(id, direcao)
+{
 
-    card.className = "card";
-
-    card.innerHTML = `
-
-        <div class="card-img">
-
-            <img src="img/premiere.png">
-
-            <div class="overlay">
-                ▶ Assistir
-            </div>
-
-        </div>
-
-        <p class="titulo">Premiere ${i+1}</p>
-
-    `;
-
-    card.onclick = ()=>{
-
-        window.location.href =
-            "player.html?video=" +
-            encodeURIComponent(link) +
-            "&nome=" +
-            encodeURIComponent("Premiere "+(i+1));
-
-    };
-
-    carrossel.appendChild(card);
-
-}
-
-
-// iniciar
-criarCards();
-
-
-// POSICIONAR NO MEIO REAL
-setTimeout(()=>{
-
-    carrossel.scrollLeft = carrossel.scrollWidth / 3;
-
-}, 100);
-
-
-
-// LOOP INFINITO SUAVE (SEM TRAVAR)
-let bloqueado = false;
-
-carrossel.addEventListener("scroll", ()=>{
-
-    if(bloqueado) return;
-
-    const larguraTotal = carrossel.scrollWidth;
-    const larguraVisivel = carrossel.clientWidth;
-    const posicao = carrossel.scrollLeft;
-
-    const pontoInicio = larguraTotal / 3;
-    const pontoFim = pontoInicio * 2;
-
-    if(posicao <= 0){
-
-        bloqueado = true;
-
-        carrossel.scrollLeft = pontoInicio;
-
-        setTimeout(()=> bloqueado = false, 50);
-
-    }
-
-    else if(posicao + larguraVisivel >= larguraTotal){
-
-        bloqueado = true;
-
-        carrossel.scrollLeft = pontoInicio;
-
-        setTimeout(()=> bloqueado = false, 50);
-
-    }
-
-});
-
-
-
-// SCROLL HORIZONTAL COM MOUSE
-carrossel.addEventListener("wheel", (e)=>{
-
-    e.preventDefault();
-
-    carrossel.scrollLeft += e.deltaY;
-
-});
-
-
-
-
-// BOTÕES LATERAIS (se usar)
-function rolar(direcao){
+    const carrossel = document.getElementById(id);
 
     carrossel.scrollBy({
 
@@ -146,24 +136,43 @@ function rolar(direcao){
 }
 
 
+// =============================
+// INICIAR TODOS
+// =============================
 
+iniciarCarrossel(
+    "carrossel-premiere",
+    linksPremiere,
+    "Premiere",
+    "img/premiere.png"
+);
+
+
+iniciarCarrossel(
+    "carrossel-paramount",
+    linksParamount,
+    "Paramount",
+    "img/paramountplus.png"
+);
+
+
+// =============================
 // POPUP VPN
+// =============================
+
 const popup = document.getElementById("vpn-popup");
 
-if(popup){
-
-    if(!localStorage.getItem("vpnAvisoMostrado")){
-
+if(popup)
+{
+    if(!localStorage.getItem("vpnAvisoMostrado"))
+    {
         popup.classList.remove("hidden");
-
     }
-
 }
 
-function fecharPopup(){
-
+function fecharPopup()
+{
     popup.classList.add("hidden");
 
     localStorage.setItem("vpnAvisoMostrado", "true");
-
 }
