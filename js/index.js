@@ -17,6 +17,14 @@ const linksPremiere = [
 
 const linksParamount = [
 
+    "https://www2.embedtv.best/caze1",
+    "https://www2.embedtv.best/caze2",
+    "https://www2.embedtv.best/caze3"
+
+];
+
+const linksCazeTV = [
+
     "https://www2.embedtv.best/paramountplus",
     "https://www2.embedtv.best/paramountplus2"
 
@@ -62,6 +70,46 @@ const canaisInfantis = [
 
 ];
 
+const canaisDocumentario = [
+
+    {
+        nome: "Animal Planet",
+        logo: "img/animalplanet.png",
+        link: "https://www2.embedtv.best/animalplanet"
+    },
+
+    {
+        nome: "Discovery Channel",
+        logo: "img/discoverychannel.png",
+        link: "https://www2.embedtv.best/discoverychannel"
+    },
+
+    {
+        nome: "Discovery H&H",
+        logo: "img/discoveryhh.png",
+        link: "https://www2.embedtv.best/discoveryhh"
+    },
+
+    {
+        nome: "History",
+        logo: "img/history.png",
+        link: "https://www2.embedtv.best/history"
+    },
+
+    {
+        nome: "Discovery World",
+        logo: "img/discoveryworld.png",
+        link: "https://www2.embedtv.best/discoveryword"
+    },
+
+    {
+        nome: "Fish TV",
+        logo: "img/fishtv.png",
+        link: "https://www2.embedtv.best/fish"
+    }
+
+];
+
 // =============================
 // FUNÇÃO PARA CARREGAR CANAIS INFANTIS
 // =============================
@@ -81,7 +129,7 @@ function carregarCanais(lista, idCarrossel)
             <div class="card">
 
                 <div class="card-img">
-                    <img src="${canal.logo}">
+                    <img src="${canal.logo}" class="${canal.classe || ''}">
 
                     <div class="overlay">
                         ▶ Assistir
@@ -259,6 +307,14 @@ iniciarCarrossel(
     "img/paramountplus.png"
 );
 
+iniciarCarrossel(
+    "carrossel-cazetv",
+    linksCazeTV,
+    "CazeTV",
+    "img/cazetv.png"
+);
+
+
 
 // =============================
 // POPUP VPN
@@ -281,4 +337,15 @@ function fecharPopup()
     localStorage.setItem("vpnAvisoMostrado", "true");
 }
 
+function abrirVPNPopup()
+{
+    document.getElementById("vpn-info-popup").classList.remove("hidden");
+}
+
+function fecharVPNPopup()
+{
+    document.getElementById("vpn-info-popup").classList.add("hidden");
+}
+
 carregarCanais(canaisInfantis, "carrossel-infantil");
+carregarCanais(canaisDocumentario, "carrossel-documentario");
