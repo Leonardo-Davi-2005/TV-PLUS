@@ -45,19 +45,20 @@ body{
 
 }
 
-
-.logo{
-
-    font-size: 26px;
-
+/* LOGO HEADER */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 22px;
     font-weight: bold;
+    color: #ffffff;
+}
 
-    color: #e50914;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
+/* imagem do logo */
+.logo img {
+    height: 150px;
+    width: auto;
 }
 
 
@@ -480,10 +481,12 @@ h2{
 
     }
 
-    .logo{
+    .logo img {
+        height: 100px;
+    }
 
-        font-size: 20px;
-
+    .logo span {
+        font-size: 18px;
     }
 
     .menu{

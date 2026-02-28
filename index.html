@@ -6,6 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png">
+
 <title>TV PLUS</title>
 
 <link rel="stylesheet" href="css/index.css">
@@ -16,7 +18,7 @@
 <header class="header">
 
     <div class="logo">
-        TV PLUS
+        <img src="img/logotvplus.png" alt="TV PLUS Logo">
     </div>
 
     <nav class="menu">
@@ -100,6 +102,31 @@
             <button
                 class="seta direita"
                 onclick="rolar('carrossel-paramount', 1)">
+                ❯
+            </button>
+
+        </div>
+
+        <div class="separador"></div>
+
+    </section>
+
+        <!-- INFANTIL -->
+    <section class="secao">
+
+        <h2 class="secao-titulo">Canais Infantis</h2>
+
+        <div class="carrossel-container">
+
+            <button class="seta esquerda"
+                onclick="rolar('carrossel-infantil', -1)">
+                ❮
+            </button>
+
+            <div class="carrossel" id="carrossel-infantil"></div>
+
+            <button class="seta direita"
+                onclick="rolar('carrossel-infantil', 1)">
                 ❯
             </button>
 

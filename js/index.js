@@ -22,6 +22,90 @@ const linksParamount = [
 
 ];
 
+const canaisInfantis = [
+
+    {
+        nome: "Cartoon Network",
+        logo: "img/cartoonnetwork.png",
+        link: "https://www2.embedtv.best/cartoonnetwork"
+    },
+
+    {
+        nome: "Cartoonito",
+        logo: "img/cartoonito.png",
+        link: "https://www2.embedtv.best/cartoonito"
+    },
+
+    {
+        nome: "Os Simpsons 24h",
+        logo: "img/24h.png",
+        link: "https://www2.embedtv.best/24h_simpsons"
+    },
+
+    {
+        nome: "Nickelodeon",
+        logo: "img/nickelodeon.png",
+        link: "https://www2.embedtv.best/nickelodeon"
+    },
+
+    {
+        nome: "Gloob",
+        logo: "img/gloob.png",
+        link: "https://www2.embedtv.best/gloob"
+    },
+
+    {
+        nome: "Discovery Kids",
+        logo: "img/discoverykids.png",
+        link: "https://www2.embedtv.best/discoverykids"
+    }
+
+];
+
+// =============================
+// FUNÇÃO PARA CARREGAR CANAIS INFANTIS
+// =============================
+
+function carregarCanais(lista, idCarrossel)
+{
+    const carrossel = document.getElementById(idCarrossel);
+
+    if(!carrossel) return;
+
+    lista.forEach(canal =>
+    {
+        const item = document.createElement("div");
+        item.className = "canal";
+
+        item.innerHTML = `
+            <div class="card">
+
+                <div class="card-img">
+                    <img src="${canal.logo}">
+
+                    <div class="overlay">
+                        ▶ Assistir
+                    </div>
+                </div>
+
+                <p class="titulo">${canal.nome}</p>
+
+            </div>
+        `;
+
+        item.onclick = () =>
+        {
+            window.location.href =
+                "player.html?video=" +
+                encodeURIComponent(canal.link) +
+                "&nome=" +
+                encodeURIComponent(canal.nome);
+        };
+
+        carrossel.appendChild(item);
+    });
+}
+
 
 // =============================
 // CRIAR CARROSSEL COMPLETO
@@ -72,6 +156,26 @@ function iniciarCarrossel(id, links, nomeCanal, imagem)
             };
 
             carrossel.appendChild(card);
+        });
+    }
+
+        function carregarCanais(lista, idCarrossel)
+    {
+        const carrossel = document.getElementById(idCarrossel);
+
+        lista.forEach(canal =>
+        {
+            const item = document.createElement("div");
+            item.className = "canal";
+
+            item.innerHTML = `
+                <a href="${canal.link}">
+                    <img src="${canal.logo}">
+                    <p>${canal.nome}</p>
+                </a>
+            `;
+
+            carrossel.appendChild(item);
         });
     }
 
@@ -176,3 +280,5 @@ function fecharPopup()
 
     localStorage.setItem("vpnAvisoMostrado", "true");
 }
+
+carregarCanais(canaisInfantis, "carrossel-infantil");
