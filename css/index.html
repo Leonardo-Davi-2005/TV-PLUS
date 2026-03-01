@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png">
+
+    <title>TV PLUS</title>
+
+    <link rel="stylesheet" href="css/index.css">
+
+</head>
+
+<body>
+
+    <!-- POPUP INFO VPN -->
+    <div id="vpn-info-popup" class="vpn-info-popup hidden">
+
+        <div class="vpn-info-box">
+
+            <span class="fechar" onclick="fecharVPNPopup()">✕</span>
+
+            <h2>Melhor experiência com VPN</h2>
+
+            <p>
+                O uso de VPN pode melhorar a estabilidade, reduzir travamentos e evitar bloqueios.
+            </p>
+
+            <h3>Melhores localizações:</h3>
+
+            <ul>
+                <li>🇺🇸 Virginia — melhor desempenho geral</li>
+                <li>🇺🇸 Miami — excelente alternativa</li>
+            </ul>
+
+            <p class="vpn-dica">
+                Recomendamos testar Virginia primeiro.
+            </p>
+
+        </div>
+
+    </div>
+
+    <body>
+
+        <header class="header">
+
+            <div class="logo">
+                <img src="img/logotvplus.png" alt="TV PLUS Logo">
+            </div>
+
+            <!-- Botão hamburger -->
+            <div class="menu-toggle" id="menu-toggle" onclick="toggleMenu()">
+                ☰
+            </div>
+
+            <nav class="menu" id="menu">
+
+                <a href="index.html">Início</a>
+
+                <a href="#" onclick="filtrarCategoria('esporte')">
+                    Esportes
+                </a>
+
+                <a href="#" onclick="filtrarCategoria('filmes')">
+                    Filmes e Séries
+                </a>
+
+                <a href="#" onclick="abrirVPNPopup()">VPN</a>
+
+            </nav>
+
+        </header>
+
+
+        <!-- Banner VPN -->
+        <div id="vpn-banner">
+            Para melhor experiência, utilize uma VPN e AdBlock.
+        </div>
+
+
+        <main class="conteudo">
+
+            <!-- PREMIERE -->
+            <section class="secao" data-categoria="esporte">
+
+                <div class="separador"></div>
+
+                <h2>Canais Premiere</h2>
+
+                <div class="carrossel-container">
+
+                    <button class="seta esquerda" onclick="rolar('carrossel-premiere', -1)">
+                        ❮
+                    </button>
+
+                    <div class="carrossel" id="carrossel-premiere">
+                    </div>
+
+                    <button class="seta direita" onclick="rolar('carrossel-premiere', 1)">
+                        ❯
+                    </button>
+
+                </div>
+
+            </section>
+
+            <div class="separador"></div>
+
+            <!-- PARAMOUNT -->
+            <section class="secao" data-categoria="esporte">
+
+                <h2>Canais Paramount Plus</h2>
+
+                <div class="carrossel-container">
+
+                    <button class="seta esquerda" onclick="rolar('carrossel-paramount', -1)">
+                        ❮
+                    </button>
+
+                    <div class="carrossel" id="carrossel-paramount">
+                    </div>
+
+                    <button class="seta direita" onclick="rolar('carrossel-paramount', 1)">
+                        ❯
+                    </button>
+
+                </div>
+
+                <div class="separador"></div>
+
+            </section>
+
+            <!-- INFANTIL -->
+            <section class="secao" data-categoria="filmes">
+
+                <h2 class="secao-titulo">Canais Infantis</h2>
+
+                <div class="carrossel-container">
+
+                    <button class="seta esquerda" onclick="rolar('carrossel-infantil', -1)">
+                        ❮
+                    </button>
+
+                    <div class="carrossel" id="carrossel-infantil"></div>
+
+                    <button class="seta direita" onclick="rolar('carrossel-infantil', 1)">
+                        ❯
+                    </button>
+
+                </div>
+
+                <div class="separador"></div>
+
+            </section>
+
+            <!-- CazeTV -->
+            <section class="secao" data-categoria="esporte">
+
+                <h2>Canais CazeTV</h2>
+
+                <div class="carrossel-container">
+
+                    <button class="seta esquerda" onclick="rolar('carrossel-cazetv', -1)">
+                        ❮
+                    </button>
+
+                    <div class="carrossel" id="carrossel-cazetv">
+                    </div>
+
+                    <button class="seta direita" onclick="rolar('carrossel-cazetv', 1)">
+                        ❯
+                    </button>
+
+                </div>
+
+                <div class="separador"></div>
+
+            </section>
+
+            <!-- Documentarios -->
+            <section class="secao">
+
+                <h2>Canais Documentario</h2>
+
+                <div class="carrossel-container">
+
+                    <button class="seta esquerda" onclick="rolar('carrossel-documentario', -1)">
+                        ❮
+                    </button>
+
+                    <div class="carrossel" id="carrossel-documentario">
+                    </div>
+
+                    <button class="seta direita" onclick="rolar('carrossel-documentario', 1)">
+                        ❯
+                    </button>
+
+                </div>
+
+                <div class="separador"></div>
+
+            </section>
+
+            <!-- Filmes e Series -->
+            <section class="secao" data-categoria="filmes">
+
+                <h2>Filmes e Séries</h2>
+
+                <div class="carrossel-container">
+
+                    <button class="seta esquerda" onclick="rolar('carrossel-filmeseseries', -1)">
+                        ❮
+                    </button>
+
+                    <div class="carrossel" id="carrossel-filmeseseries">
+                    </div>
+
+                    <button class="seta direita" onclick="rolar('carrossel-filmeseseries', 1)">
+                        ❯
+                    </button>
+
+                </div>
+
+                <div class="separador"></div>
+
+            </section>
+
+
+        </main>
+
+
+
+        <!-- Popup VPN -->
+        <div id="vpn-popup" class="hidden">
+
+            <div class="popup-content">
+
+                <h2>Melhor experiência com VPN e AdBlock</h2>
+
+                <p>
+                    Recomendamos o uso de VPN e bloqueador de anúncios para melhor estabilidade.
+                </p>
+
+                <button onclick="fecharPopup()">
+                    Entendi
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <script src="js/index.js"></script>
+
+    </body>
+
+</html>

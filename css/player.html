@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png">
+
+<title>TV PLUS - Player</title>
+
+<link rel="stylesheet" href="css/player.css">
+
+</head>
+<body>
+
+
+<header class="player-header">
+
+    <button class="btn-voltar" onclick="voltar()">
+        <span class="texto">Voltar</span>
+    </button>
+
+    <div class="titulo" id="titulo">
+        Carregando...
+    </div>
+
+</header>
+
+
+
+<main class="player-container">
+
+    <iframe
+        id="player"
+        allowfullscreen
+        allow="autoplay; fullscreen"
+    ></iframe>
+
+</main>
+
+
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const video = params.get("video");
+
+const nome = params.get("nome");
+
+const player = document.getElementById("player");
+
+player.src = video;
+
+document.getElementById("titulo").innerText = nome || "TV PLUS";
+
+
+
+function voltar(){
+
+    window.history.back();
+
+}
+
+</script>
+
+
+</body>
+</html>
