@@ -15,7 +15,7 @@ const linksPremiere = [
 
 ];
 
-const linksParamount = [
+const linksCazeTV = [
 
     "https://www2.embedtv.best/caze1",
     "https://www2.embedtv.best/caze2",
@@ -23,7 +23,7 @@ const linksParamount = [
 
 ];
 
-const linksCazeTV = [
+const linksParamount = [
 
     "https://www2.embedtv.best/paramountplus",
     "https://www2.embedtv.best/paramountplus2"
@@ -106,6 +106,52 @@ const canaisDocumentario = [
         nome: "Fish TV",
         logo: "img/fishtv.png",
         link: "https://www2.embedtv.best/fish"
+    }
+
+];
+
+const canaisFilmeseSéries = [
+
+    {
+        nome: "Adult Swim",
+        logo: "img/adultswim.png",
+        link: "https://www2.embedtv.best/adultswim"
+    },
+
+    {
+        nome: "TNT",
+        logo: "img/tnt.png",
+        link: "https://www2.embedtv.best/tnt"
+    },
+
+    {
+        nome: "Paramount",
+        logo: "img/paramountchannel.png",
+        link: "https://www2.embedtv.best/paramountchannel"
+    },
+
+    {
+        nome: "Sony Channel",
+        logo: "img/sonychannel.png",
+        link: "https://www2.embedtv.best/sonychannel"
+    },
+
+    {
+        nome: "Telecine Pipoca",
+        logo: "img/telecinepipoca.png",
+        link: "https://www2.embedtv.best/telecinepipoca"
+    },
+
+    {
+        nome: "Cinemax",
+        logo: "img/cinemax.png",
+        link: "https://www2.embedtv.best/cinemax"
+    },
+
+    {
+        nome: "Telecine Premium",
+        logo: "img/telecinepremium.png",
+        link: "https://www2.embedtv.best/telecinepremium"
     }
 
 ];
@@ -287,6 +333,35 @@ function rolar(id, direcao)
 
 }
 
+function filtrarCategoria(categoria)
+{
+    const secoes = document.querySelectorAll(".secao");
+
+    secoes.forEach(secao =>
+    {
+        const categoriaSecao = secao.getAttribute("data-categoria");
+
+        if(categoria === "todos")
+        {
+            secao.style.display = "block";
+        }
+        else if(categoriaSecao === categoria)
+        {
+            secao.style.display = "block";
+        }
+        else
+        {
+            secao.style.display = "none";
+        }
+    });
+
+    // voltar pro topo
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
 
 // =============================
 // INICIAR TODOS
@@ -347,5 +422,21 @@ function fecharVPNPopup()
     document.getElementById("vpn-info-popup").classList.add("hidden");
 }
 
+function toggleMenu()
+{
+    const menu = document.getElementById("menu");
+
+    menu.classList.toggle("ativo");
+}
+
+document.querySelectorAll(".menu a").forEach(link =>
+{
+    link.addEventListener("click", () =>
+    {
+        document.getElementById("menu").classList.remove("ativo");
+    });
+});
+
 carregarCanais(canaisInfantis, "carrossel-infantil");
 carregarCanais(canaisDocumentario, "carrossel-documentario");
+carregarCanais(canaisFilmeseSéries, "carrossel-filmeseseries");
