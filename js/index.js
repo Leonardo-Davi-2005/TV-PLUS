@@ -58,6 +58,14 @@ const linksDisney = [
    
 ];
 
+const linksMax = [
+
+    "https://www2.embedtv.best/max1",
+    "https://www2.embedtv.best/max2",
+    "https://www2.embedtv.best/max3"
+   
+];
+
 const canaisInfantis = [
 
     {
@@ -361,6 +369,10 @@ function rolar(id, direcao)
 
 }
 
+// =============================
+// FILTRO
+// =============================
+
 function filtrarCategoria(categoria)
 {
     const secoes = document.querySelectorAll(".secao");
@@ -441,6 +453,13 @@ iniciarCarrossel(
     "img/disneyplus.png"
 );
 
+iniciarCarrossel(
+    "carrossel-max",
+    linksMax,
+    "Max",
+    "img/max.png"
+);
+
 
 
 // =============================
@@ -474,6 +493,10 @@ function fecharVPNPopup()
     document.getElementById("vpn-info-popup").classList.add("hidden");
 }
 
+// =============================
+// TRÊS BARRAS MOBILE
+// =============================
+
 function toggleMenu()
 {
     const menu = document.getElementById("menu");
@@ -492,6 +515,10 @@ document.querySelectorAll(".menu a").forEach(link =>
 carregarCanais(canaisInfantis, "carrossel-infantil");
 carregarCanais(canaisDocumentario, "carrossel-documentario");
 carregarCanais(canaisFilmeseSéries, "carrossel-filmeseseries");
+
+// =============================
+// REMOVE LINHA
+// =============================
 
 document.addEventListener("DOMContentLoaded", () =>
 {
