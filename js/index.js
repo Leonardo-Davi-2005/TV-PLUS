@@ -369,9 +369,9 @@ function filtrarCategoria(categoria)
 
     secoes.forEach(secao =>
     {
-        const cat = secao.dataset.categoria;
+        const categorias = secao.dataset.categoria || "";
 
-        if(!categoria || cat === categoria)
+        if(!categoria || categorias.includes(categoria))
         {
             secao.style.display = "block";
 
