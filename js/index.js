@@ -39,6 +39,17 @@ const linksSportv = [
 
 ];
 
+const linksEspn = [
+
+    "https://www2.embedtv.best/espn",
+    "https://www2.embedtv.best/espn2",
+    "https://www2.embedtv.best/espn3",
+    "https://www2.embedtv.best/espn4",
+    "https://www2.embedtv.best/espn5",
+    "https://www2.embedtv.best/espn6"
+
+];
+
 const canaisInfantis = [
 
     {
@@ -406,6 +417,13 @@ iniciarCarrossel(
     linksSportv,
     "Sportv",
     "img/sportv.png"
+);
+
+iniciarCarrossel(
+    "carrossel-espn",
+    linksEspn,
+    "ESPN",
+    "img/espn.png"
 );
 
 
