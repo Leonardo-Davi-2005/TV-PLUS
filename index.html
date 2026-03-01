@@ -69,6 +69,10 @@
                     Filmes e Séries
                 </a>
 
+                <a href="#" onclick="filtrarCategoria('documentario')">
+                    Documentario
+                </a>
+
                 <a href="#" onclick="abrirVPNPopup()">VPN</a>
 
             </nav>
@@ -172,7 +176,7 @@
             </section>
 
             <!-- Documentarios -->
-            <section class="secao">
+            <section class="secao" data-categoria="documentario">
 
                 <h2>Canais Documentario</h2>
 
@@ -208,6 +212,28 @@
                     </div>
 
                     <button class="seta direita" onclick="rolar('carrossel-filmeseseries', 1)">
+                        ❯
+                    </button>
+
+                </div>
+
+            </section>
+
+                        <!-- Sportv -->
+            <section class="secao" data-categoria="esporte">
+
+                <h2>Sportv</h2>
+
+                <div class="carrossel-container">
+
+                    <button class="seta esquerda" onclick="rolar('carrossel-sportv', -1)">
+                        ❮
+                    </button>
+
+                    <div class="carrossel" id="carrossel-sportv">
+                    </div>
+
+                    <button class="seta direita" onclick="rolar('carrossel-sportv', 1)">
                         ❯
                     </button>
 

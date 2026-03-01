@@ -30,6 +30,15 @@ const linksParamount = [
 
 ];
 
+const linksSportv = [
+
+    "https://www2.embedtv.best/sportv",
+    "https://www2.embedtv.best/sportv2",
+    "https://www2.embedtv.best/sportv3",
+    "https://www2.embedtv.best/sportv4"
+
+];
+
 const canaisInfantis = [
 
     {
@@ -390,6 +399,13 @@ iniciarCarrossel(
     linksCazeTV,
     "CazeTV",
     "img/cazetv.png"
+);
+
+iniciarCarrossel(
+    "carrossel-sportv",
+    linksSportv,
+    "Sportv",
+    "img/sportv.png"
 );
 
 
