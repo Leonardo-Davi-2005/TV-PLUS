@@ -154,7 +154,6 @@ h2 {
 
 }
 
-
 /* ========================= */
 /* CARD */
 /* ========================= */
@@ -534,6 +533,40 @@ h2 {
             rgba(255, 255, 255, 0.3),
             transparent);
 
+}
+
+.secao
+{
+    margin-top: 40px;
+    padding-top: 30px;
+    position: relative;
+}
+
+/* cria a linha gradiente */
+.secao::before
+{
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+    left: 40px;
+    right: 40px;
+
+    height: 1px;
+
+    background: linear-gradient(
+        to right,
+        transparent,
+        rgba(255,255,255,0.35),
+        transparent
+    );
+}
+
+/* remove da primeira seção visível */
+.secao.primeira-visivel::before
+{
+    display: none;
 }
 
 

@@ -337,28 +337,31 @@ function filtrarCategoria(categoria)
 {
     const secoes = document.querySelectorAll(".secao");
 
+    let primeiraEncontrada = false;
+
     secoes.forEach(secao =>
     {
-        const categoriaSecao = secao.getAttribute("data-categoria");
+        const cat = secao.dataset.categoria;
 
-        if(categoria === "todos")
+        if(!categoria || cat === categoria)
         {
             secao.style.display = "block";
-        }
-        else if(categoriaSecao === categoria)
-        {
-            secao.style.display = "block";
+
+            if(!primeiraEncontrada)
+            {
+                secao.classList.add("primeira-visivel");
+                primeiraEncontrada = true;
+            }
+            else
+            {
+                secao.classList.remove("primeira-visivel");
+            }
         }
         else
         {
             secao.style.display = "none";
+            secao.classList.remove("primeira-visivel");
         }
-    });
-
-    // voltar pro topo
-    window.scrollTo({
-        top: 0,
-        behavior: "smooth"
     });
 }
 
@@ -440,3 +443,8 @@ document.querySelectorAll(".menu a").forEach(link =>
 carregarCanais(canaisInfantis, "carrossel-infantil");
 carregarCanais(canaisDocumentario, "carrossel-documentario");
 carregarCanais(canaisFilmeseSéries, "carrossel-filmeseseries");
+
+document.addEventListener("DOMContentLoaded", () =>
+{
+    filtrarCategoria(); // mostra tudo e define a primeira corretamente
+});
