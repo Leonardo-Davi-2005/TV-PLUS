@@ -50,6 +50,14 @@ const linksEspn = [
 
 ];
 
+const linksDisney = [
+
+    "https://www2.embedtv.best/disneyplus1",
+    "https://www2.embedtv.best/disneyplus2",
+    "https://www2.embedtv.best/disneyplus3"
+   
+];
+
 const canaisInfantis = [
 
     {
@@ -424,6 +432,13 @@ iniciarCarrossel(
     linksEspn,
     "ESPN",
     "img/espn.png"
+);
+
+iniciarCarrossel(
+    "carrossel-disney",
+    linksDisney,
+    "Disney",
+    "img/disneyplus.png"
 );
 
 
