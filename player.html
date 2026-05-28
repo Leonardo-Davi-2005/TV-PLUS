@@ -1,71 +1,98 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png">
+    <link rel="icon" type="image/png" sizes="64x64" href="img/favicon.png">
 
-<title>TV PLUS - Player</title>
+    <title>TV PLUS - Player</title>
 
-<link rel="stylesheet" href="css/player.css">
+    <link rel="stylesheet" href="css/player.css">
 
 </head>
+
 <body>
 
 
-<header class="player-header">
+    <header class="player-header">
 
-    <button class="btn-voltar" onclick="voltar()">
-        <span class="texto">Voltar</span>
-    </button>
+        <button class="btn-voltar" onclick="voltar()">
+            <span class="texto">Voltar</span>
+        </button>
 
-    <div class="titulo" id="titulo">
-        Carregando...
-    </div>
+        <div class="titulo" id="titulo">
+            Carregando...
+        </div>
 
-</header>
+        <button class="btn-fullscreen" onclick="abrirFullscreen()">
+            ⛶
+        </button>
 
-
-
-<main class="player-container">
-
-    <iframe
-        id="player"
-        allowfullscreen
-        allow="autoplay; fullscreen"
-    ></iframe>
-
-</main>
+    </header>
 
 
 
-<script>
+    <main class="player-container">
 
-const params = new URLSearchParams(window.location.search);
+        <iframe id="player" allowfullscreen allow="autoplay; fullscreen"></iframe>
 
-const video = params.get("video");
-
-const nome = params.get("nome");
-
-const player = document.getElementById("player");
-
-player.src = video;
-
-document.getElementById("titulo").innerText = nome || "TV PLUS";
+    </main>
 
 
 
-function voltar(){
+    <script>
+        const params = new URLSearchParams(window.location.search);
 
-    window.history.back();
+        const video = params.get("video");
+        const nome = params.get("nome");
 
-}
+        const player = document.getElementById("player");
+        const titulo = document.getElementById("titulo");
 
-</script>
+        // valida vídeo
+        if (video) {
+            player.src = video;
+        }
+        else {
+            titulo.innerText = "Erro ao carregar vídeo";
+        }
+
+        // título
+        titulo.innerText = nome || "TV PLUS";
+
+        // voltar
+        function voltar() {
+            window.history.back();
+        }
+
+        // FULLSCREEN (toggle real)
+        function abrirFullscreen() {
+            if (!document.fullscreenElement) {
+                player.requestFullscreen();
+            }
+            else {
+                document.exitFullscreen();
+            }
+        }
+
+        // esconder header no fullscreen
+        document.addEventListener("fullscreenchange", () => {
+            const header = document.querySelector(".player-header");
+
+            if (document.fullscreenElement) {
+                header.style.display = "none";
+            }
+            else {
+                header.style.display = "flex";
+            }
+        });
+    </script>
 
 
 </body>
+
 </html>

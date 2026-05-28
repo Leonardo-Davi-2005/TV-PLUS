@@ -4,12 +4,30 @@ const video = params.get("video");
 const nome = params.get("nome");
 
 const player = document.getElementById("player");
+const titulo = document.getElementById("nomeCanal");
 
-player.src = video;
+// validação básica
+if (video) {
+    player.src = video;
+}
+else {
+    alert("Erro: vídeo não encontrado");
+}
 
-document.getElementById("nomeCanal").innerText =
-nome || "TV PLUS";
+// título
+titulo.innerText = nome || "TV PLUS";
 
-function voltar(){
+// voltar
+function voltar() {
     window.location.href = "index.html";
+}
+
+// FULLSCREEN TOGGLE (melhorado)
+function abrirFullscreen() {
+    if (!document.fullscreenElement) {
+        player.requestFullscreen();
+    }
+    else {
+        document.exitFullscreen();
+    }
 }

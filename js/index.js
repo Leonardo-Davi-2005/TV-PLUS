@@ -55,7 +55,7 @@ const linksDisney = [
     "https://www2.embedtv.best/disneyplus1",
     "https://www2.embedtv.best/disneyplus2",
     "https://www2.embedtv.best/disneyplus3"
-   
+
 ];
 
 const linksMax = [
@@ -63,7 +63,7 @@ const linksMax = [
     "https://www2.embedtv.best/max1",
     "https://www2.embedtv.best/max2",
     "https://www2.embedtv.best/max3"
-   
+
 ];
 
 const canaisInfantis = [
@@ -196,14 +196,12 @@ const canaisFilmeseSéries = [
 // FUNÇÃO PARA CARREGAR CANAIS INFANTIS
 // =============================
 
-function carregarCanais(lista, idCarrossel)
-{
+function carregarCanais(lista, idCarrossel) {
     const carrossel = document.getElementById(idCarrossel);
 
-    if(!carrossel) return;
+    if (!carrossel) return;
 
-    lista.forEach(canal =>
-    {
+    lista.forEach(canal => {
         const item = document.createElement("div");
         item.className = "canal";
 
@@ -223,8 +221,7 @@ function carregarCanais(lista, idCarrossel)
             </div>
         `;
 
-        item.onclick = () =>
-        {
+        item.onclick = () => {
             window.location.href =
                 "player.html?video=" +
                 encodeURIComponent(canal.link) +
@@ -241,21 +238,18 @@ function carregarCanais(lista, idCarrossel)
 // CRIAR CARROSSEL COMPLETO
 // =============================
 
-function iniciarCarrossel(id, links, nomeCanal, imagem)
-{
+function iniciarCarrossel(id, links, nomeCanal, imagem) {
 
     const carrossel = document.getElementById(id);
 
-    if(!carrossel) return;
+    if (!carrossel) return;
 
     let bloqueado = false;
 
 
     // criar cards 3x (loop infinito)
-    for(let x = 0; x < 3; x++)
-    {
-        links.forEach((link, i)=>
-        {
+    for (let x = 0; x < 3; x++) {
+        links.forEach((link, i) => {
             const card = document.createElement("div");
 
             card.className = "card";
@@ -272,29 +266,26 @@ function iniciarCarrossel(id, links, nomeCanal, imagem)
 
                 </div>
 
-                <p class="titulo">${nomeCanal} ${i+1}</p>
+                <p class="titulo">${nomeCanal} ${i + 1}</p>
 
             `;
 
-            card.onclick = () =>
-            {
+            card.onclick = () => {
                 window.location.href =
                     "player.html?video=" +
                     encodeURIComponent(link) +
                     "&nome=" +
-                    encodeURIComponent(nomeCanal + " " + (i+1));
+                    encodeURIComponent(nomeCanal + " " + (i + 1));
             };
 
             carrossel.appendChild(card);
         });
     }
 
-        function carregarCanais(lista, idCarrossel)
-    {
+    function carregarCanais(lista, idCarrossel) {
         const carrossel = document.getElementById(idCarrossel);
 
-        lista.forEach(canal =>
-        {
+        lista.forEach(canal => {
             const item = document.createElement("div");
             item.className = "canal";
 
@@ -311,15 +302,15 @@ function iniciarCarrossel(id, links, nomeCanal, imagem)
 
 
     // posicionar no meio
-    setTimeout(()=>{
+    setTimeout(() => {
         carrossel.scrollLeft = carrossel.scrollWidth / 3;
-    },100);
+    }, 100);
 
 
     // loop infinito suave
-    carrossel.addEventListener("scroll", ()=>{
+    carrossel.addEventListener("scroll", () => {
 
-        if(bloqueado) return;
+        if (bloqueado) return;
 
         const larguraTotal = carrossel.scrollWidth;
         const larguraVisivel = carrossel.clientWidth;
@@ -327,20 +318,19 @@ function iniciarCarrossel(id, links, nomeCanal, imagem)
 
         const pontoInicio = larguraTotal / 3;
 
-        if(posicao <= 0 || posicao + larguraVisivel >= larguraTotal)
-        {
+        if (posicao <= 0 || posicao + larguraVisivel >= larguraTotal) {
             bloqueado = true;
 
             carrossel.scrollLeft = pontoInicio;
 
-            setTimeout(()=> bloqueado = false, 50);
+            setTimeout(() => bloqueado = false, 50);
         }
 
     });
 
 
     // scroll com mouse
-    carrossel.addEventListener("wheel", (e)=>{
+    carrossel.addEventListener("wheel", (e) => {
 
         e.preventDefault();
 
@@ -355,8 +345,7 @@ function iniciarCarrossel(id, links, nomeCanal, imagem)
 // BOTÕES LATERAIS
 // =============================
 
-function rolar(id, direcao)
-{
+function rolar(id, direcao) {
 
     const carrossel = document.getElementById(id);
 
@@ -373,32 +362,26 @@ function rolar(id, direcao)
 // FILTRO
 // =============================
 
-function filtrarCategoria(categoria)
-{
+function filtrarCategoria(categoria) {
     const secoes = document.querySelectorAll(".secao");
 
     let primeiraEncontrada = false;
 
-    secoes.forEach(secao =>
-    {
+    secoes.forEach(secao => {
         const categorias = secao.dataset.categoria || "";
 
-        if(!categoria || categorias.includes(categoria))
-        {
+        if (!categoria || categorias.includes(categoria)) {
             secao.style.display = "block";
 
-            if(!primeiraEncontrada)
-            {
+            if (!primeiraEncontrada) {
                 secao.classList.add("primeira-visivel");
                 primeiraEncontrada = true;
             }
-            else
-            {
+            else {
                 secao.classList.remove("primeira-visivel");
             }
         }
-        else
-        {
+        else {
             secao.style.display = "none";
             secao.classList.remove("primeira-visivel");
         }
@@ -468,28 +451,23 @@ iniciarCarrossel(
 
 const popup = document.getElementById("vpn-popup");
 
-if(popup)
-{
-    if(!localStorage.getItem("vpnAvisoMostrado"))
-    {
+if (popup) {
+    if (!localStorage.getItem("vpnAvisoMostrado")) {
         popup.classList.remove("hidden");
     }
 }
 
-function fecharPopup()
-{
+function fecharPopup() {
     popup.classList.add("hidden");
 
     localStorage.setItem("vpnAvisoMostrado", "true");
 }
 
-function abrirVPNPopup()
-{
+function abrirVPNPopup() {
     document.getElementById("vpn-info-popup").classList.remove("hidden");
 }
 
-function fecharVPNPopup()
-{
+function fecharVPNPopup() {
     document.getElementById("vpn-info-popup").classList.add("hidden");
 }
 
@@ -497,17 +475,14 @@ function fecharVPNPopup()
 // TRÊS BARRAS MOBILE
 // =============================
 
-function toggleMenu()
-{
+function toggleMenu() {
     const menu = document.getElementById("menu");
 
     menu.classList.toggle("ativo");
 }
 
-document.querySelectorAll(".menu a").forEach(link =>
-{
-    link.addEventListener("click", () =>
-    {
+document.querySelectorAll(".menu a").forEach(link => {
+    link.addEventListener("click", () => {
         document.getElementById("menu").classList.remove("ativo");
     });
 });
@@ -520,7 +495,6 @@ carregarCanais(canaisFilmeseSéries, "carrossel-filmeseseries");
 // REMOVE LINHA
 // =============================
 
-document.addEventListener("DOMContentLoaded", () =>
-{
+document.addEventListener("DOMContentLoaded", () => {
     filtrarCategoria(); // mostra tudo e define a primeira corretamente
 });

@@ -535,16 +535,14 @@ h2 {
 
 }
 
-.secao
-{
+.secao {
     margin-top: 40px;
     padding-top: 30px;
     position: relative;
 }
 
 /* cria a linha gradiente */
-.secao::before
-{
+.secao::before {
     content: "";
 
     position: absolute;
@@ -555,17 +553,14 @@ h2 {
 
     height: 1px;
 
-    background: linear-gradient(
-        to right,
-        transparent,
-        rgba(255,255,255,0.35),
-        transparent
-    );
+    background: linear-gradient(to right,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent);
 }
 
 /* remove da primeira seção visível */
-.secao.primeira-visivel::before
-{
+.secao.primeira-visivel::before {
     display: none;
 }
 
