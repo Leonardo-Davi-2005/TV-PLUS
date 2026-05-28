@@ -4,65 +4,65 @@
 
 const linksPremiere = [
 
-    "https://www2.embedtv.best/premiere",
-    "https://www2.embedtv.best/premiere2",
-    "https://www2.embedtv.best/premiere3",
-    "https://www2.embedtv.best/premiere4",
-    "https://www2.embedtv.best/premiere5",
-    "https://www2.embedtv.best/premiere6",
-    "https://www2.embedtv.best/premiere7",
-    "https://www2.embedtv.best/premiere8"
+    "https://www2.embedtv.lat/premiere",
+    "https://www2.embedtv.lat/premiere2",
+    "https://www2.embedtv.lat/premiere3",
+    "https://www2.embedtv.lat/premiere4",
+    "https://www2.embedtv.lat/premiere5",
+    "https://www2.embedtv.lat/premiere6",
+    "https://www2.embedtv.lat/premiere7",
+    "https://www2.embedtv.lat/premiere8"
 
 ];
 
 const linksCazeTV = [
 
-    "https://www2.embedtv.best/caze1",
-    "https://www2.embedtv.best/caze2",
-    "https://www2.embedtv.best/caze3"
+    "https://www2.embedtv.lat/caze1",
+    "https://www2.embedtv.lat/caze2",
+    "https://www2.embedtv.lat/caze3"
 
 ];
 
 const linksParamount = [
 
-    "https://www2.embedtv.best/paramountplus",
-    "https://www2.embedtv.best/paramountplus2"
+    "https://www2.embedtv.lat/paramountplus",
+    "https://www2.embedtv.lat/paramountplus2"
 
 ];
 
 const linksSportv = [
 
-    "https://www2.embedtv.best/sportv",
-    "https://www2.embedtv.best/sportv2",
-    "https://www2.embedtv.best/sportv3",
-    "https://www2.embedtv.best/sportv4"
+    "https://www2.embedtv.lat/sportv",
+    "https://www2.embedtv.lat/sportv2",
+    "https://www2.embedtv.lat/sportv3",
+    "https://www2.embedtv.lat/sportv4"
 
 ];
 
 const linksEspn = [
 
-    "https://www2.embedtv.best/espn",
-    "https://www2.embedtv.best/espn2",
-    "https://www2.embedtv.best/espn3",
-    "https://www2.embedtv.best/espn4",
-    "https://www2.embedtv.best/espn5",
-    "https://www2.embedtv.best/espn6"
+    "https://www2.embedtv.lat/espn",
+    "https://www2.embedtv.lat/espn2",
+    "https://www2.embedtv.lat/espn3",
+    "https://www2.embedtv.lat/espn4",
+    "https://www2.embedtv.lat/espn5",
+    "https://www2.embedtv.lat/espn6"
 
 ];
 
 const linksDisney = [
 
-    "https://www2.embedtv.best/disneyplus1",
-    "https://www2.embedtv.best/disneyplus2",
-    "https://www2.embedtv.best/disneyplus3"
+    "https://www2.embedtv.lat/disneyplus1",
+    "https://www2.embedtv.lat/disneyplus2",
+    "https://www2.embedtv.lat/disneyplus3"
 
 ];
 
 const linksMax = [
 
-    "https://www2.embedtv.best/max1",
-    "https://www2.embedtv.best/max2",
-    "https://www2.embedtv.best/max3"
+    "https://www2.embedtv.lat/max1",
+    "https://www2.embedtv.lat/max2",
+    "https://www2.embedtv.lat/max3"
 
 ];
 
@@ -71,37 +71,37 @@ const canaisInfantis = [
     {
         nome: "Cartoon Network",
         logo: "img/cartoonnetwork.png",
-        link: "https://www2.embedtv.best/cartoonnetwork"
+        link: "https://www2.embedtv.lat/cartoonnetwork"
     },
 
     {
         nome: "Cartoonito",
         logo: "img/cartoonito.png",
-        link: "https://www2.embedtv.best/cartoonito"
+        link: "https://www2.embedtv.lat/cartoonito"
     },
 
     {
         nome: "Os Simpsons 24h",
         logo: "img/24h.png",
-        link: "https://www2.embedtv.best/24h_simpsons"
+        link: "https://www2.embedtv.lat/24h_simpsons"
     },
 
     {
         nome: "Nickelodeon",
         logo: "img/nickelodeon.png",
-        link: "https://www2.embedtv.best/nickelodeon"
+        link: "https://www2.embedtv.lat/nickelodeon"
     },
 
     {
         nome: "Gloob",
         logo: "img/gloob.png",
-        link: "https://www2.embedtv.best/gloob"
+        link: "https://www2.embedtv.lat/gloob"
     },
 
     {
         nome: "Discovery Kids",
         logo: "img/discoverykids.png",
-        link: "https://www2.embedtv.best/discoverykids"
+        link: "https://www2.embedtv.lat/discoverykids"
     }
 
 ];
@@ -111,37 +111,37 @@ const canaisDocumentario = [
     {
         nome: "Animal Planet",
         logo: "img/animalplanet.png",
-        link: "https://www2.embedtv.best/animalplanet"
+        link: "https://www2.embedtv.lat/animalplanet"
     },
 
     {
         nome: "Discovery Channel",
         logo: "img/discoverychannel.png",
-        link: "https://www2.embedtv.best/discoverychannel"
+        link: "https://www2.embedtv.lat/discoverychannel"
     },
 
     {
         nome: "Discovery H&H",
         logo: "img/discoveryhh.png",
-        link: "https://www2.embedtv.best/discoveryhh"
+        link: "https://www2.embedtv.lat/discoveryhh"
     },
 
     {
         nome: "History",
         logo: "img/history.png",
-        link: "https://www2.embedtv.best/history"
+        link: "https://www2.embedtv.lat/history"
     },
 
     {
         nome: "Discovery World",
         logo: "img/discoveryworld.png",
-        link: "https://www2.embedtv.best/discoveryword"
+        link: "https://www2.embedtv.lat/discoveryword"
     },
 
     {
         nome: "Fish TV",
         logo: "img/fishtv.png",
-        link: "https://www2.embedtv.best/fish"
+        link: "https://www2.embedtv.lat/fish"
     }
 
 ];
@@ -151,43 +151,43 @@ const canaisFilmeseSéries = [
     {
         nome: "Adult Swim",
         logo: "img/adultswim.png",
-        link: "https://www2.embedtv.best/adultswim"
+        link: "https://www2.embedtv.lat/adultswim"
     },
 
     {
         nome: "TNT",
         logo: "img/tnt.png",
-        link: "https://www2.embedtv.best/tnt"
+        link: "https://www2.embedtv.lat/tnt"
     },
 
     {
         nome: "Paramount",
         logo: "img/paramountchannel.png",
-        link: "https://www2.embedtv.best/paramountchannel"
+        link: "https://www2.embedtv.lat/paramountchannel"
     },
 
     {
         nome: "Sony Channel",
         logo: "img/sonychannel.png",
-        link: "https://www2.embedtv.best/sonychannel"
+        link: "https://www2.embedtv.lat/sonychannel"
     },
 
     {
         nome: "Telecine Pipoca",
         logo: "img/telecinepipoca.png",
-        link: "https://www2.embedtv.best/telecinepipoca"
+        link: "https://www2.embedtv.lat/telecinepipoca"
     },
 
     {
         nome: "Cinemax",
         logo: "img/cinemax.png",
-        link: "https://www2.embedtv.best/cinemax"
+        link: "https://www2.embedtv.lat/cinemax"
     },
 
     {
         nome: "Telecine Premium",
         logo: "img/telecinepremium.png",
-        link: "https://www2.embedtv.best/telecinepremium"
+        link: "https://www2.embedtv.lat/telecinepremium"
     }
 
 ];
